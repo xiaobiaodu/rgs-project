@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="RGS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RGS</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js" defer></script>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">RGS: Reflection-aware Gaussian Splatting via Learning Geometry Continuity for Reflective Objects</h1>
+            <br>
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://dorverbin.github.io/">Dor Verbin<sup>1</sup></a>,</span>
+              <span class="author-block">
+                <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://phogzone.com/">Peter Hedman<sup>1</sup></a>,</span>
+              <span class="author-block">
+                <a href="https://bmild.github.io/">Ben Mildenhall<sup>1</sup></a>,</span>
+              <span class="author-block">
+                <a href="https://benattal.github.io/">Ben Attal<sup>2</sup></a>,</span>
+              <span class="author-block">
+                <a href="https://szeliski.org/">Richard Szeliski<sup>1</sup></a>,</span>
+              <span class="author-block">
+                <a href="https://jonbarron.info/">Jon Barron<sup>1</sup></a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block is-size-5"><sup>1</sup>Google Research</span>
+              <span class="author-block is-size-5"><sup>2</sup>Carnegie Mellon University</span>
+            </div>
+              
+              
+              
+              <br>
+            <div class="is-size-5 publication-venue">
+              SIGGRAPH Asia 2024
+            </div> -->
+
+            <div class="is-size-5 publication-authors">
+<!--
+              <span class="author-block">
+                Anonymous Authors</span>
+-->
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="link" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+<!--
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+-->
+                <span class="link-block">
+                  <a href="link" class="external-link button is-normal is-rounded is-dark" title="Code">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code [coming soon]</span>
+                    </a>
+                </span>
+
+                <!--
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark" title="Coming soon!" disabled>
+                    <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                    </a>
+                  </span> -->
+    
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+        <!-- <video id="teaser" width="100%" playsinline controls autoplay loop muted>
+            <source src="static/videos/teaser.mp4" type="video/mp4" />
+        </video> -->
+        <img src="static/teaser.png" alt="">
+<script>
+    document.getElementById('teaser').play();
+</script>
+    </div>
+  </section>
+    
+    
+  <section class="section">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+          <p>
+            Volume rendering techniques, \textit{e.g.} NeRF and Gaussian Splatting, have significantly improved the quality of novel view synthesis.
+            However, they struggle to satisfy precise rendering and geometric reconstruction in glossy regions because of the ambiguity of cross-view specular.
+            To mitigate the specular ambiguity, we propose a reflection-aware Gaussian Splatting method, named RGS for high-quality novel view synthesis, which can model non-trivial specular without surface geometry collapse. 
+            By regularizing the geometric continuity in specular regions, the environment light can be blended precisely on glossy surfaces in novel views.
+          <p>
+          <p>
+            Particularly, our proposed RGS is composed of the following three contributions:
+            1) To avoid collapsed surfaces in reflective regions, we first regularize the rendered normal of regions with strong specular by enforcing the total variation loss and material characteristics, on top of our parameterized Gaussian model with reflective strength. 
+            2) Apart from normal regularization, we regularize the rendered depth of 3D Gaussians with an elaborated stereo depth estimation network, further enhancing geometric continuity. 
+            3) To further capture specular from indirect light, we propose a densification strategy guided by the reflective strength to supplement more Gaussian kernels in the reflective regions.
+            Extensive experiments demonstrate our method consistently delivers 1dB more PSNR improvement over previous methods, achieving state-of-the-art performance.          </p>
+          </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Interactive Comparisons</h2>
+      <p>
+        Here we display interactive videos comparing our proposed RGS with 3DGS-DR. See more details in the paper. <br><br>
+        Select an object below:
+      </p>
+      <br>  
+      <div class="tabs-widget">
+        <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
+          <ul class="is-marginless">
+            <li><a>toaster</a></li>
+            <li><a>helmet</a></li>
+            <li><a>car</a></li>
+            <li><a>materials</a></li>
+          </ul>
+        </div>
+        <div class="content has-text-centered is-size-7-mobile">
+          Interactive visualization. Hover or tap to move the split.
+        </div>
+        <div class="tabs-content">
+          <!-- Begin. -->
+
+            <div class="video-comparison" data-label="3DGS-DR" data-label2="Ours">
+              <video class="video" width=100% loop playsinline muted
+                src="./static/videos/toaster.mp4"></video>
+              <canvas></canvas>
+            </div>
+            <div class="video-comparison" data-label="3DGS-DR" data-label2="Ours">
+              <video class="video" width=100% loop playsinline muted
+                src="./static/videos/helmet.mp4"></video>
+              <canvas></canvas>
+            </div>
+            <div class="video-comparison" data-label="3DGS-DR" data-label2="Ours">
+              <video class="video" width=100% loop playsinline muted
+                src="./static/videos/car.mp4"></video>
+              <canvas></canvas>
+            </div>
+            <div class="video-comparison" data-label="3DGS-DR" data-label2="Ours">
+              <video class="video" width=100% loop playsinline muted
+                src="./static/videos/materials.mp4"></video>
+              <canvas></canvas>
+            </div>
+          <!-- End. -->
+        </div>
+      </div>
+    </div>
+  </section>
+       
+   
+     
+           
+       
+<section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Novel View Synthesis Comparisons</h2>
+      Here, we provide the novel view synthesis comparisons of our proposed RGS with existing methods.
+      <div class="tabs-widget">
+        <div class="tabs is-centered">
+          <ul class="is-marginless">
+          </ul>
+        </div>
+        <div class="tabs-content">
+          <div>
+            <div class="tabs-widget">
+              <div class="tabs-content">
+                  <video class="video" width=100% loop playsinline muted autoplay controls
+                    src="./static/videos/nvs.mp4"></video>
+                  <canvas></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+ 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Relighting Application</h2>
+      Here, we provide the relighting results, compared with GS-IR.
+      <div class="tabs-widget">
+        <div class="tabs is-centered">
+          <ul class="is-marginless">
+          </ul>
+        </div>
+        <div class="tabs-content">
+          <div>
+            <div class="tabs-widget">
+              <div class="tabs-content">
+                  <video class="video" width=100% loop playsinline muted autoplay controls
+                    src="./static/videos/relighting.mp4"></video>
+                  <canvas></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Decomposition results</h2>
+      Here, we provide the decompositon results of our proposed RGS.
+      <div class="tabs-widget">
+        <div class="tabs is-centered">
+          <ul class="is-marginless">
+          </ul>
+        </div>
+        <div class="tabs-content">
+          <div>
+            <div class="tabs-widget">
+              <div class="tabs-content">
+                  <video class="video" width=100% loop playsinline muted autoplay controls
+                    src="./static/videos/decompose.mp4"></video>
+                  <canvas></canvas> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+                This webpage is based on the project page for <a href="https://camp-nerf.github.io">CamP</a>. The video comparison tool is from the <a
+                href="https://dorverbin.github.io/refnerf/index.html">Ref-NeRF</a> project.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+      
+      
+</body>
+
+</html>
